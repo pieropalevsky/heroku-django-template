@@ -18,13 +18,31 @@ To use this project, follow these steps:
 
 ## Creating Your Project
 
-Using this template to create a new Django app is easy::
+Using this template to create a new Django app is easy. You can replace ``project_name`` with your desired project name.
 
-    $ django-admin.py startproject --template=https://github.com/pieropalevsky/heroku-django-template/archive/master.zip --name=Procfile helloworld
 
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
+    $ django-admin.py startproject --template=https://github.com/pieropalevsky/heroku-django-template/archive/master.zip --name=Procfile project_name
+    $ cd project_name 
+    $ virtualenv -p python3 venv
+    $ source venv/bin/activate 
+    $ pip install -r requirements.txt
 
-You can replace ``helloworld`` with your desired project name.
+Then save your SECRET_KEY setting somewhere safe to keep it out of version control. To use it locally save as an environment variable
+
+    $ export SECRET_KEY="SECRET_KEY GOES HERE"
+
+The next step is to point your project at the correct settings file.
+    
+    $ export DJANGO_SETTINGS_MODULE='project_name.settings.local'
+
+Then set up up your ./manage.py to be executable
+
+    $  chmod u+rwx manage.py
+    
+To finish setting up locally run
+
+    $ ./manage.py migrate
+    $ ./manage.py collectstatic
 
 ## Deployment to Heroku
 
