@@ -29,7 +29,7 @@ Using this template to create a new Django app is easy. You can replace ``projec
 
 Then save your SECRET_KEY setting somewhere safe to keep it out of version control. To use it locally save as an environment variable
 
-    $ export SECRET_KEY="SECRET_KEY GOES HERE"
+    $ export SECRET_KEY='SECRET_KEY GOES HERE'
 
 The next step is to point your project at the correct settings file.
     
@@ -51,6 +51,8 @@ To finish setting up locally run
     $ git commit -m "Initial commit"
 
     $ heroku create
+    $ heroku config:add DJANGO_SETTINGS_MODULE='project_name.settings.production'
+    $ heroku config:add SECRET_KEY='SECRET_KEY GOES HERE'
     $ git push heroku master
 
     $ heroku run python manage.py migrate
