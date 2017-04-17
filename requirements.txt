@@ -1,7 +1,7 @@
 appnope==0.1.0
 decorator==4.0.11
 dj-database-url==0.4.1
-Django==1.10.4
+Django==1.10.7
 django-debug-toolbar==1.6
 django-extensions==1.7.5
 gunicorn==19.6.0
